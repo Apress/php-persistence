@@ -1,0 +1,10 @@
+<?php if ($tag && count($tag->getPosts()) > 0) { $posts = $tag->getPosts(); ?>
+<h1>All posts with tag "<?php echo $label ?>"</h1>
+<ul>
+<?php foreach($posts as $post) {?>
+<li><a href="<?php echo $app->urlFor('/post', array('id' => $post->getId())); ?>"><?php echo $post->getTitle(); ?></a></li>
+<?php } ?>
+</ul>
+<?php } else { ?>
+<h1>Sorry, no posts founds :-/</h1>
+<?php } ?>

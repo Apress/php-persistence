@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talking</title>
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="container">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">Talking</a>
+        <div class="nav-collapse">
+          <ul class="nav navbar-nav pull-right">
+            <li class="active"><a href="#">Hello, Max Mustermann!</a></li>
+              <li><a href="/user/1">My posts & profile</a></li>
+              <li><a href="/add/post">Add new post</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <?php echo $yield ?>
+    </div> <!-- /container -->
+  </body>
+</html>

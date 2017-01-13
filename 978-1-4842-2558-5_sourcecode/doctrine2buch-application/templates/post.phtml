@@ -1,0 +1,21 @@
+<h1><?php echo $post->getTitle(); ?></h1>
+<p><?php echo $post->getContent(); ?></p>
+<h2>Author</h2>
+<p><a href="<?php echo $app->urlFor('/user', array('id' => $post->getUser()->getId())) ?>"><?php echo $post->getUser()->assembleDisplayName(); ?></a></p>
+<?php if (count($post->getTags()) > 0) { ?>
+<h2>Tags</h2>
+<p>
+<?php foreach ($post->getTags() as $tag) { ?>
+<a href="<?php echo $app->urlFor('/tag', array('label' => $tag->getLabel()));?>"><?php echo $tag->getLabel(); ?></a>&nbsp;
+<?php } ?>
+<?php } ?>
+</p>
+<?php if ($post->getCategory()) { ?>
+<h2>Category</h2>
+<?php echo $post->getCategory()->getLabel(); ?>
+<?php } ?>
+<?php if ($post->getUser()->getId() == 1) { ?>
+<h2>Actions</h2>
+<a href="<?php echo $app->urlFor('/edit/post-form', array('id' => $post->getId()));?>" class="btn btn-default">Edit</a>
+<a href="<?php echo $app->urlFor('/delete/post', array('id' => $post->getId()));?>" class="btn btn-default" onclick="if(!confirm('Really?')) { return false; }">Delete</a>
+<?php } ?>

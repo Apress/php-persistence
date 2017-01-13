@@ -1,0 +1,9 @@
+<h1>All posts</h1>
+<?php foreach($posts as $post) {?>
+    <h2><?php echo $post->getTitle(); ?></h2>
+    <p><?php echo substr($post->getContent(), 0, 280); ?> ... <i>written by <?php echo $post->getUser()->assembleDisplayName(); ?></i></p>
+    <p>
+    <a class="btn btn-large btn-primary" href="<?php echo $app->urlFor('/post', array('id' => $post->getId())); ?>">Read full post &raquo;</a>
+    </p>
+    <hr />
+<?php } ?>
